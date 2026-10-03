@@ -44,7 +44,9 @@
         <a href="{% url 'ministry:about' %}">About</a>
         <a href="{% url 'ministry:messages' %}">Messages</a>
         <a href="{% url 'ministry:testimonies' %}">Testimonies</a>
+        {% comment %} Hidden for now
         <a href="{% url 'ministry:events' %}">Events</a>
+        {% endcomment %}
         <a class="btn btn--nav" href="{% url 'ministry:contact' %}">Contact</a>
       </nav>
     </div>
@@ -78,8 +80,10 @@
       <div>
         <p class="footer__h">Connect</p>
         <a href="{% url 'ministry:todays_word' %}">Today's Word</a>
+        {% comment %} Hidden for now
         <a href="{% url 'ministry:events' %}">Events</a>
         <a href="{% url 'ministry:media' %}">Media</a>
+        {% endcomment %}
         <a href="{% url 'ministry:contact' %}">Contact</a>
       </div>
       <div>
