@@ -24,7 +24,7 @@
 
 {% block content %}
 <section class="hero">
-  <img class="hero__img" src="{% static 'ministry/images/hero-preaching.jpg' %}" alt="David Sudher preaching and ministering" width="1600" height="900">
+  <img class="hero__img" src="{% static 'ministry/images/home/home-hero.jpg' %}" alt="David Sudher preaching at a ministry gathering" width="1920" height="1280" fetchpriority="high" style="object-position: 50% 25%">
   <div class="hero__veil"></div>
   <div class="hero__copy reveal">
     <p class="eyebrow eyebrow--light">David Sudher Ministries</p>
@@ -34,6 +34,26 @@
       <a class="btn btn--gold" href="{% url 'ministry:messages' %}">Watch Messages</a>
       <a class="btn btn--ghost" href="{% url 'ministry:about' %}">Read David's Story</a>
     </div>
+  </div>
+</section>
+
+<section class="intro section" id="introduction">
+  <div class="wrap intro__grid">
+    <div class="intro__copy reveal">
+      <p class="eyebrow">Introduction</p>
+      <h2>A calling to impact a generation</h2>
+      <p>David Sudher brings together years of leadership, mentoring, and ministry experience with a deep passion to see people encounter Jesus Christ.</p>
+      <p>His ministry is focused on helping people discover their identity in Christ, understand God's purpose for their lives, grow in faith, and become powerful witnesses for the Gospel.</p>
+      <p>His heart is especially focused on the next generation and on raising believers who will carry the message of Christ into their families, communities, workplaces, cities, and nations.</p>
+      <p class="intro__action"><a class="btn intro__cta" href="{% url 'ministry:about' %}">Read David's Story</a></p>
+    </div>
+    <figure class="intro__portrait reveal">
+      <img src="{% static 'ministry/images/home/generation-impact.jpg' %}"
+           alt="David Sudher preaching at a ministry gathering"
+           width="1400" height="933"
+           loading="lazy">
+      <figcaption>Leader. Mentor. Minister. Witness.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -117,18 +137,19 @@
       </div>
       <a class="btn btn--outline" href="{% url 'ministry:messages' %}">View all</a>
     </header>
-    {% if messages %}
+    {% if home_videos %}
     <div class="article-grid">
-      {% for message in messages %}
-      <article class="article-card reveal">
-        <a href="{% url 'ministry:message_detail' message.slug %}">
-          <img src="{{ message.thumbnail_url }}" alt="{{ message.title }}">
-          <div class="article-card__body">
-            <p class="meta">{{ message.preached_on|date:"M j, Y" }}</p>
-            <h3>{{ message.title }}</h3>
-            <p>{{ message.description }}</p>
-          </div>
-        </a>
+      {% for video in home_videos %}
+      <article class="article-card message-video reveal">
+        <div class="message-video__media">
+          <button class="message-video__trigger" type="button" data-video-id="{{ video.video_id }}" data-start="{{ video.start }}" data-video-title="{{ video.title }}" aria-label="{% if video.title %}Play {{ video.title }}{% else %}Play video{% endif %}">
+            <img src="https://i.ytimg.com/vi/{{ video.video_id }}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/{{ video.video_id }}/hqdefault.jpg';" alt="{{ video.title|default:'Video thumbnail' }}" width="1200" height="675" {% if not forloop.first %}loading="lazy"{% endif %}>
+            <span class="play play--sm" aria-hidden="true"></span>
+          </button>
+          {% if video.is_live %}<span class="message-video__badge">LIVE STREAM</span>{% endif %}
+          {% if video.start %}<span class="message-video__badge message-video__badge--start">Starts at 32:24</span>{% endif %}
+        </div>
+        {% if video.title %}<div class="article-card__body"><h3>{{ video.title }}</h3></div>{% endif %}
       </article>
       {% endfor %}
     </div>

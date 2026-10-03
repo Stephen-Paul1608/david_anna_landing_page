@@ -11,6 +11,7 @@ SECRET_KEY = "django-insecure-n6-zb^!&++7hemorhpr+@8!ig(5+b$#3stdj4-#x2-u_wo0ep(
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 INSTALLED_APPS = [
     "django.contrib.admin",

@@ -1,3 +1,5 @@
+import re
+import unicodedata
 from datetime import date, datetime
 from types import SimpleNamespace
 
@@ -7,6 +9,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 
 from .forms import ContactForm, NewsletterForm, TestimonyForm
+from .messages_data import MESSAGES
 from .testimonies_data import CATEGORY_LABELS, TESTIMONIES
 
 
@@ -113,15 +116,15 @@ def _scripture_data():
 
 
 def _home_context():
-    message_items = _message_data()[:3]
+    home_videos = MESSAGES[:3]
     event_items = _event_data()[:2]
     featured_testimony = next((item for item in TESTIMONIES if item.get("featured")), TESTIMONIES[0] if TESTIMONIES else None)
     return {
         "todays_word": None,
-        "featured_message": message_items[0],
+        "featured_message": home_videos[0],
         "featured_testimony": featured_testimony,
         "testimonies": TESTIMONIES,
-        "messages": message_items,
+        "home_videos": home_videos,
         "events": event_items,
         "scripture": _scripture_data(),
         "newsletter_form": NewsletterForm(),
@@ -143,11 +146,21 @@ def about(request):
 
 
 def messages_list(request):
-    messages = _message_data()
+    videos = [
+        {
+            **video,
+            "title": re.sub(
+                r" {2,}",
+                " ",
+                re.sub(r"[\U0001F300-\U0001FAFF\u2600-\u27BF\uFE0F]", "", unicodedata.normalize("NFKC", video["title"])).strip(),
+            ),
+        }
+        for video in MESSAGES
+    ]
     return render(
         request,
         "ministry/messages.html",
-        _page_context(items=messages, featured=messages[0]),
+        _page_context(videos=videos),
     )
 
 
