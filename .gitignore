@@ -4,3 +4,4 @@ venv/
 .venv/
 .env
 db.sqlite3
+david_anna_images/

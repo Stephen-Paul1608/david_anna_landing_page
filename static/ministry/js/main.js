@@ -136,3 +136,25 @@ if (dialog) {
     }
   });
 }
+(() => {
+  const page = document.querySelector("[data-about-page]");
+  if (!page || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+
+  page.querySelectorAll(".about-scene").forEach((scene) => {
+    const stage = scene.querySelector(".about-scene__stage");
+    if (!stage) return;
+    const photos = Array.from(stage.querySelectorAll(".about-scene__photo[data-photo-for]"));
+    const chapters = Array.from(scene.querySelectorAll(".about-chapter[id]"));
+    const photoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const activeId = entry.target.id;
+        photos.forEach((photo) => {
+          photo.classList.toggle("is-active", photo.dataset.photoFor === activeId);
+        });
+      });
+    }, { rootMargin: "-38% 0px -42% 0px", threshold: 0 });
+    chapters.forEach((chapter) => photoObserver.observe(chapter));
+  });
+})();

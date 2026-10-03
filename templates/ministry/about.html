@@ -4,73 +4,187 @@
 {% block meta %}Learn about David Sudher's calling, prayer journey, mentoring, and ministry across India, Pakistan, and the United States.{% endblock %}
 {% block body_class %}page-inner{% endblock %}
 {% block content %}
-<section class="page-hero page-hero--about">
-  <img src="{% static 'ministry/images/portrait-thoughtful.jpg' %}" alt="David Sudher in prayer and reflection">
-  <div class="page-hero__copy">
-    <p class="eyebrow eyebrow--light">About</p>
-    <h1>David Sudher</h1>
-    <p class="page-hero__sub">Leader. Mentor. Minister. Witness.</p>
-  </div>
-</section>
+<div class="about-page" data-about-page>
+  <header class="about-hero">
+    <img class="about-hero__image" src="{% static 'ministry/images/about/hero-ministry.jpg' %}" alt="David speaking at a ministry gathering" width="1280" height="853" fetchpriority="high" data-focal-point="50% 35%" style="object-position: 50% 35%">
+    <div class="about-hero__overlay" aria-hidden="true"></div>
+    <div class="about-hero__copy">
+      <p class="eyebrow eyebrow--gold">ABOUT DAVID</p>
+      <h1><span class="about-hero__word">About</span> <span class="about-hero__word">David</span></h1>
+      <p class="about-hero__subline">From a prayer-filled home in Bangalore to the nations.</p>
+    </div>
+    <a class="about-scroll" href="#a-life-rooted-in-prayer">
+      <span>Scroll</span>
+      <span class="about-scroll__line" aria-hidden="true"></span>
+    </a>
+  </header>
 
-<section class="section">
-  <div class="wrap prose reveal">
-    <p class="lede">David Sudher brings more than 17 years of experience in leadership, ministry, and people development, with a heart to help believers know Christ and live with purpose.</p>
-    <p>He has served in sales, operations, and global leadership spaces, but the deepest influence in his life has been the call to raise a generation that knows God, hears His voice, and moves with courage.</p>
+  <section class="about-scene about-scene--left" aria-label="Chapters one through three">
+    <aside class="about-scene__stage" aria-hidden="true">
+      <figure class="about-scene__photo is-active" data-photo-for="a-life-rooted-in-prayer">
+        <img src="{% static 'ministry/images/about/chapter-01-prayer.jpg' %}" alt="" width="1400" height="1050" loading="lazy" data-focal-point="50% 22%" style="object-position: 50% 22%">
+        <figcaption>A Life Rooted in Prayer</figcaption>
+      </figure>
+      <figure class="about-scene__photo" data-photo-for="a-growing-hunger-for-god">
+        <img src="{% static 'ministry/images/about/chapter-02-holy-spirit.jpg' %}" alt="" width="656" height="960" loading="lazy" data-focal-point="50% 24%" style="object-position: 50% 24%">
+        <figcaption>A Growing Hunger for God</figcaption>
+      </figure>
+      <figure class="about-scene__photo" data-photo-for="a-journey-into-prophetic-ministry">
+        <img src="{% static 'ministry/images/about/chapter-03-prophetic-ministry.jpg' %}" alt="" width="1400" height="1050" loading="lazy" data-focal-point="47% 26%" style="object-position: 47% 26%">
+        <figcaption>A Journey into Prophetic Ministry</figcaption>
+      </figure>
+    </aside>
+    <div class="about-story">
+      <article class="about-chapter" id="a-life-rooted-in-prayer" aria-labelledby="chapter-1-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-01-prayer.jpg' %}" alt="David praying with a young man during a ministry gathering" width="1400" height="1050" loading="lazy" data-focal-point="50% 22%" style="object-position: 50% 22%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">01</p>
+        <h2 id="chapter-1-title">A Life Rooted in Prayer</h2>
+        <p class="about-chapter__lead">David Sudher was born and raised in Bangalore, India, in a home deeply rooted in prayer and the presence of God.</p>
+        <p>From his earliest years, David was surrounded by a strong spiritual atmosphere. His mother was a woman of prayer who would spend <strong>seven hours a day in prayer</strong>, seeking God and interceding for others. Her life of devotion became one of the earliest influences that shaped David's relationship with God.</p>
+        <p>Her prayers, sacrifices, and commitment to God played a significant role in raising a son who would go on to be used powerfully by God and become a blessing to many.</p>
+        <p>The foundation laid in his home created in David a deep awareness of God's presence and a desire to know Him personally. What began as the spiritual atmosphere of his childhood would eventually become a personal pursuit of God's presence.</p>
+      </article>
 
-    <h2>A Life Rooted in Prayer</h2>
-    <p>David Sudher was born and raised in Bangalore, India, in a home deeply rooted in prayer and the presence of God.</p>
-    <p>From his earliest years, he was shaped by the life of his mother, a woman of prayer who spent <strong>seven hours a day in prayer</strong>. Her devotion became one of the earliest influences that shaped his relationship with God.</p>
-    <p>Her prayers and sacrifice laid a foundation for David to grow in spiritual sensitivity and a deep hunger for God's presence.</p>
+      <article class="about-chapter" id="a-growing-hunger-for-god" aria-labelledby="chapter-2-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-02-holy-spirit.jpg' %}" alt="David praying for a man during a ministry gathering" width="656" height="960" loading="lazy" data-focal-point="50% 24%" style="object-position: 50% 24%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">02</p>
+        <h2 id="chapter-2-title">A Growing Hunger for God</h2>
+        <p class="about-chapter__lead">As David grew in his relationship with God, his hunger and thirst for Him continued to increase.</p>
+        <p>In 2010, David developed an unquenchable desire to experience the fullness of the Holy Spirit.</p>
+        <p>During this season, David's hunger for God became so intense that he went to his mentor, <strong>Joshua Paul</strong>, seeking guidance and asking how he could go deeper in his relationship with God and experience the fullness of the Holy Spirit.</p>
+        <p>As Joshua Paul spoke with David and began giving him instructions to devote himself to the Scriptures and spend time in fasting and prayer, something extraordinary happened.</p>
+        <p><strong>While they were still in conversation, before David could even carry out the instructions he had been given, God saw the deep hunger and unquenchable thirst in David's heart and filled him with the Holy Spirit.</strong></p>
+        <p>In that very moment, David experienced a powerful encounter with God. His spiritual eyes were opened, and he began to experience the spiritual realm in a way he had never experienced before.</p>
+        <p>David describes seeing many generals of God, including <strong>Billy Graham, Kathryn Kuhlman, and many others</strong>.</p>
+        <p>This encounter became a defining moment in David's spiritual journey. It showed him that God sees the hunger of a person's heart and responds to those who genuinely seek Him.</p>
+        <p>From this experience came a statement that continues to express David's conviction:</p>
+        <blockquote class="about-quote">
+          <p class="about-quote__text"><strong>"When there is an unquenchable thirst for God, He will fill you."</strong></p>
+        </blockquote>
+      </article>
 
-    <figure class="about-figure">
-      <img src="{% static 'ministry/images/prayer-community.jpg' %}" alt="Prayer gathering with believers seeking God's presence" width="1200" height="800" loading="lazy">
-      <figcaption class="about-caption"><em>Prayer. Intercession. Surrender.</em></figcaption>
-    </figure>
+      <article class="about-chapter" id="a-journey-into-prophetic-ministry" aria-labelledby="chapter-3-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-03-prophetic-ministry.jpg' %}" alt="David praying for a man holding a microphone at a ministry gathering" width="1400" height="1050" loading="lazy" data-focal-point="47% 26%" style="object-position: 47% 26%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">03</p>
+        <h2 id="chapter-3-title">A Journey into Prophetic Ministry</h2>
+        <p class="about-chapter__lead">Following this powerful encounter, David became part of the <strong>Circle Prayer Fellowship</strong>, where his pursuit of God continued to grow.</p>
+        <p>Although he was deeply involved in prayer and fellowship, there remained a persistent desire within him to understand the prophetic and to learn how God speaks, leads, and reveals His purposes to His people.</p>
+        <p>His hunger continued to draw him toward prophetic teaching and deeper spiritual formation.</p>
+        <p>Between <strong>2012 and 2013</strong>, David experienced significant prophetic confirmations concerning his calling and future ministry.</p>
+        <p>During this season, words were spoken over his life concerning an <strong>apostolic calling and a prophetic assignment to the nations</strong>.</p>
+        <p>These confirmations became important markers in David's journey, strengthening his conviction that God had called him not merely to experience His presence, but to become a vessel through which others could encounter Him.</p>
+      </article>
+    </div>
+  </section>
 
-    <h2>A Growing Hunger for God</h2>
-    <p>As David grew in his relationship with God, his hunger and thirst for Him continued to increase.</p>
-    <p>In 2010, he developed an unquenchable desire to experience the fullness of the Holy Spirit. After seeking wise counsel and devoting himself to prayer and Scripture, he experienced a powerful encounter with God.</p>
-    <p><strong>God answered the hunger of his heart in a way that marked the rest of his life.</strong></p>
-    <blockquote class="pull">"When there is an unquenchable thirst for God, He will fill you."</blockquote>
+  <section class="about-scene about-scene--right" aria-label="Chapters four through six">
+    <aside class="about-scene__stage" aria-hidden="true">
+      <figure class="about-scene__photo is-active" data-photo-for="raising-the-next-generation">
+        <img src="{% static 'ministry/images/about/chapter-04-next-generation.jpg' %}" alt="" width="575" height="386" loading="lazy" data-focal-point="47% 27%" style="object-position: 47% 27%">
+        <figcaption>Raising the Next Generation</figcaption>
+      </figure>
+      <figure class="about-scene__photo" data-photo-for="equipping-people-to-hear-god">
+        <img src="{% static 'ministry/images/about/chapter-05-equipping.jpg' %}" alt="" width="575" height="385" loading="lazy" data-focal-point="50% 28%" style="object-position: 50% 28%">
+        <figcaption>Equipping People to Hear God</figcaption>
+      </figure>
+      <figure class="about-scene__photo" data-photo-for="from-prophet-to-leader">
+        <img src="{% static 'ministry/images/about/chapter-06-leadership.jpg' %}" alt="" width="1280" height="853" loading="lazy" data-focal-point="51% 26%" style="object-position: 51% 26%">
+        <figcaption>From Prophet to Leader</figcaption>
+      </figure>
+    </aside>
+    <div class="about-story">
+      <article class="about-chapter" id="raising-the-next-generation" aria-labelledby="chapter-4-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-04-next-generation.jpg' %}" alt="David praying with a young man as others gather around them" width="575" height="386" loading="lazy" data-focal-point="47% 27%" style="object-position: 47% 27%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">04</p>
+        <h2 id="chapter-4-title">Raising the Next Generation</h2>
+        <p class="about-chapter__lead">One of the defining expressions of David's ministry has been his investment in the younger generation.</p>
+        <p>For approximately <strong>10 years</strong>, David served and led teams of young people, investing his time, energy, teaching, prayer, and leadership into their lives.</p>
+        <p>His desire was never simply to build a team. His heart was to raise people who would know God, hear His voice, recognize their calling, and walk confidently in the purposes of God for their lives.</p>
+        <p>Through years of leadership, hundreds of young people have been impacted and blessed through the teams and communities David has served.</p>
+        <p>David believes that when people are intentionally discipled and positioned under godly leadership, they can discover what God has placed within them and be equipped to influence their generation.</p>
+        <blockquote class="about-quote">
+          <p class="about-quote__text"><strong>"When God raises people, He doesn't raise them only for themselves. He raises them to become a blessing to others."</strong></p>
+        </blockquote>
+        <p>His investment in the next generation continues to be a significant part of his ministry.</p>
+      </article>
 
-    <h2>Raising the Next Generation</h2>
-    <p>One of the defining expressions of David's ministry has been his investment in the younger generation.</p>
-    <p>For approximately <strong>10 years</strong>, David served and led teams of young people, investing his time, teaching, prayer, and leadership into their lives.</p>
-    <p>His heart was never merely to build a team. It was to raise people who would know God, hear His voice, and walk confidently in His purposes.</p>
-    <blockquote class="pull">"When God raises people, He raises them to become a blessing to others."</blockquote>
+      <article class="about-chapter" id="equipping-people-to-hear-god" aria-labelledby="chapter-5-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-05-equipping.jpg' %}" alt="David praying with young people during a ministry gathering" width="575" height="385" loading="lazy" data-focal-point="50% 28%" style="object-position: 50% 28%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">05</p>
+        <h2 id="chapter-5-title">Equipping People to Hear God</h2>
+        <p class="about-chapter__lead">A central burden in David's ministry is to help people develop a deeper relationship with God.</p>
+        <p>He desires to see believers move beyond simply knowing about God and develop a personal walk with Him—learning to pray, study Scripture, recognize God's voice, discern His leading, and understand their spiritual calling.</p>
+        <p>His ministry emphasizes <strong>hunger for God, prayer, the Word of God, the Holy Spirit, prophetic understanding, and spiritual leadership</strong>.</p>
+        <p>David carries a particular burden to see a generation rise that is deeply rooted in God's Word, sensitive to the Holy Spirit, and willing to surrender their lives to God's purposes.</p>
+      </article>
 
-    <h2>Equipping People to Hear God</h2>
-    <p>A central burden in David's ministry is to help people develop a deeper relationship with God.</p>
-    <p>He longs to see believers move beyond knowing about God and begin to pray, study Scripture, recognize God's voice, discern His leading, and understand their spiritual calling.</p>
-    <p>His ministry emphasizes <strong>hunger for God, prayer, the Word, the Holy Spirit, and spiritual leadership</strong>.</p>
+      <article class="about-chapter" id="from-prophet-to-leader" aria-labelledby="chapter-6-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-06-leadership.jpg' %}" alt="David praying for a boy at a ministry gathering" width="1280" height="853" loading="lazy" data-focal-point="51% 26%" style="object-position: 51% 26%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">06</p>
+        <h2 id="chapter-6-title">From Prophet to Leader</h2>
+        <p class="about-chapter__lead">God's calling upon David's life as a prophet has also developed him as a leader to many and has positioned him to raise other leaders for God.</p>
+        <p>A prophet proclaims what God reveals, while a leader helps guide people toward the purposes and direction God has placed before them.</p>
+        <p>David has spent years leading people toward God, encouraging them to pursue Him wholeheartedly and helping them discover and walk in the purpose God has for their lives.</p>
+        <p>His leadership is centered on helping people understand their calling, recognize the direction God is leading them, and take steps of faith toward fulfilling that purpose.</p>
+        <p>Through his leadership, David has seen many people grow spiritually, discover their gifts, step into leadership, and become leaders who can, in turn, influence others for God.</p>
+      </article>
+    </div>
+  </section>
 
-    <h2>A Ministry That Crosses Borders</h2>
-    <p>What began in Bangalore has continued beyond geographical boundaries.</p>
-    <p>David has ministered in cities and villages across India and Pakistan, and he has also ministered in the United States, carrying a message of faith, prayer, and the power of the Holy Spirit.</p>
-    <p>Across every place, the heart of the message remains the same: to help people encounter Jesus and step into their calling.</p>
+  <section class="about-scene about-scene--left" aria-label="Chapters seven and eight">
+    <aside class="about-scene__stage" aria-hidden="true">
+      <figure class="about-scene__photo is-active" data-photo-for="a-ministry-that-crosses-borders">
+        <img src="{% static 'ministry/images/about/chapter-07-borders.jpg' %}" alt="" width="575" height="370" loading="lazy" data-focal-point="50% 24%" style="object-position: 50% 24%">
+        <figcaption>A Ministry That Crosses Borders</figcaption>
+      </figure>
+      <figure class="about-scene__photo" data-photo-for="a-calling-to-the-nations">
+        <img src="{% static 'ministry/images/about/chapter-08-nations.jpg' %}" alt="" width="905" height="960" loading="lazy" data-focal-point="57% 29%" style="object-position: 57% 29%">
+        <figcaption>A Calling to the Nations</figcaption>
+      </figure>
+    </aside>
+    <div class="about-story">
+      <article class="about-chapter" id="a-ministry-that-crosses-borders" aria-labelledby="chapter-7-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-07-borders.jpg' %}" alt="David ministering to a woman during a community gathering" width="575" height="370" loading="lazy" data-focal-point="50% 24%" style="object-position: 50% 24%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">07</p>
+        <h2 id="chapter-7-title">A Ministry That Crosses Borders</h2>
+        <p class="about-chapter__lead">What began in Bangalore has continued to extend beyond geographical boundaries.</p>
+        <p>David has ministered in <strong>cities and villages across India and in Pakistan</strong>, carrying a message of faith, prayer, the Word of God, and the power of the Holy Spirit.</p>
+        <p>Over the years, David's ministry and leadership have touched lives in different parts of the world, including the <strong>United States</strong>, where people have been encouraged and blessed through his ministry.</p>
+        <p>David has received testimonies from people who have experienced God's intervention in their lives, including testimonies of physical healing, breakthrough, and transformation.</p>
+        <p>These testimonies are not viewed as a reason to glorify a person, but as reminders of God's grace and His ability to touch, restore, and transform lives.</p>
+        <p><strong>Please refer to the Testimonies page to hear these stories.</strong></p>
+      </article>
 
-    <figure class="about-figure">
-      <img src="{% static 'ministry/images/prayer-youth-leader.jpg' %}" alt="David discipling and teaching young leaders" width="1200" height="800" loading="lazy">
-      <figcaption class="about-caption"><em>Leader. Discipleship. Calling.</em></figcaption>
-    </figure>
-
-    <h2>The Journey Continues</h2>
-    <p>David's story is still being written.</p>
-    <p>From the prayers of a home in Bangalore to a growing ministry reaching lives across nations, his journey is a testimony of what God can do when a person yields to Him with an undivided heart.</p>
-
-    <blockquote class="closing-prayer">
-      “To remain hungry for God, faithful to His calling, and available for His purposes.”
-    </blockquote>
-
-    <figure class="about-figure">
-      <img src="{% static 'ministry/images/speaking-jesus-calls.jpg' %}" alt="David Sudher preaching the Gospel" width="1200" height="800" loading="lazy">
-      <figcaption class="about-caption"><em>Leader. Mentor. Minister. Witness.</em></figcaption>
-    </figure>
-
-    <p class="center" style="margin-top: 2.5rem;">
-      <a class="btn btn--outline" href="{% url 'ministry:contact' %}">Connect with David</a>
-    </p>
-  </div>
-</section>
+      <article class="about-chapter" id="a-calling-to-the-nations" aria-labelledby="chapter-8-title">
+        <figure class="about-chapter__mobile-photo">
+          <img src="{% static 'ministry/images/about/chapter-08-nations.jpg' %}" alt="David ministering to a group of people" width="905" height="960" loading="lazy" data-focal-point="57% 29%" style="object-position: 57% 29%">
+        </figure>
+        <p class="about-chapter__number" aria-hidden="true">08</p>
+        <h2 id="chapter-8-title">A Calling to the Nations</h2>
+        <p class="about-chapter__lead">David carries a growing burden for the nations and for the generation God is raising in this hour.</p>
+        <p>His journey—from a prayer-filled home in Bangalore, through seasons of fasting and seeking God, encounters with the Holy Spirit, prophetic confirmation, years of leadership among young people, and ministry beyond India—continues to unfold.</p>
+        <p>At the heart of it all remains the same pursuit that began years ago:</p>
+        <blockquote class="about-quote">
+          <p class="about-quote__text"><strong>To know God, to walk with Him, and to help others encounter Him.</strong></p>
+        </blockquote>
+        <p>David's desire is to see people encounter the presence of God, discover their calling, be equipped for their assignment, and become a blessing to their generation.</p>
+        <p>He believes that the greatest expression of ministry is not simply gathering people, but <strong>raising people who will know God, carry His presence, hear His voice, and impact the nations.</strong></p>
+      </article>
+    </div>
+  </section>
+</div>
 {% endblock %}
