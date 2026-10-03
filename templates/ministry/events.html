@@ -1,0 +1,36 @@
+{% extends "ministry/base.html" %}
+{% block title %}Events{% endblock %}
+{% block meta %}Upcoming gatherings, church services, and leadership events hosted by David Sudher Ministries.{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="page-hero page-hero--short">
+  <div class="page-hero__copy">
+    <p class="eyebrow eyebrow--light">Gatherings</p>
+    <h1>Events</h1>
+    <p>Conferences, youth gatherings, church services, leadership events, and ministry meetings.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="event-list">
+      {% for event in events %}
+      <article class="event-row reveal">
+        <time datetime="{{ event.starts_at|date:'c' }}">
+          <span>{{ event.starts_at|date:"M" }}</span>
+          <strong>{{ event.starts_at|date:"d" }}</strong>
+        </time>
+        <div>
+          <p class="pill">{{ event.get_event_type_display }}</p>
+          <h3><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h3>
+          <p>{{ event.location }}</p>
+          <p>{{ event.description }}</p>
+        </div>
+        <a class="btn btn--outline" href="{{ event.get_absolute_url }}">Learn more</a>
+      </article>
+      {% empty %}
+      <p>No upcoming events are listed yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "ministry/base.html" %}
+{% block title %}{{ event.title }}{% endblock %}
+{% block meta %}{{ event.description|truncatechars:155 }}{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="wrap narrow reveal">
+    <p class="pill">{{ event.get_event_type_display }}</p>
+    <h1 class="display">{{ event.title }}</h1>
+    <p class="meta">{{ event.starts_at|date:"l, F j, Y · g:i A" }} · {{ event.location }}</p>
+    <div class="prose">{{ event.description|linebreaks }}</div>
+    {% if event.registration_url %}
+      <a class="btn btn--gold" href="{{ event.registration_url }}">Register</a>
+    {% endif %}
+    <a class="btn btn--outline" href="{% url 'ministry:contact' %}">Get in touch</a>
+  </div>
+</section>
+{% endblock %}

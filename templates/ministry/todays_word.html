@@ -1,0 +1,39 @@
+{% extends "ministry/base.html" %}
+{% block title %}Today's Word{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="wrap word__panel reveal">
+    {% if todays_word %}
+      <p class="eyebrow">{{ todays_word.date|date:"l, F j, Y" }}</p>
+      <h1 class="display">{{ todays_word.title }}</h1>
+      <blockquote class="word__thought">“{{ todays_word.thought }}”</blockquote>
+      <p class="word__kicker">Scripture</p>
+      <p class="word__scripture">“{{ todays_word.verse_text }}”</p>
+      <p class="word__ref">— {{ todays_word.verse_reference }}</p>
+      {% if todays_word.encouragement %}
+        <div class="prose"><p>{{ todays_word.encouragement }}</p></div>
+      {% endif %}
+      {% if todays_word.prayer %}
+        <p class="word__kicker">Prayer</p>
+        <p class="prose">{{ todays_word.prayer }}</p>
+      {% endif %}
+    {% else %}
+      <h1>Today's Word</h1>
+      <p>A new word will be published soon.</p>
+    {% endif %}
+  </div>
+</section>
+{% if archive %}
+<section class="section section--cream">
+  <div class="wrap narrow">
+    <h2>Recent words</h2>
+    <ul class="plain-list">
+      {% for w in archive %}
+        <li>{{ w.date|date:"M j, Y" }} — {{ w.verse_reference }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

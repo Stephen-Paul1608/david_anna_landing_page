@@ -1,0 +1,33 @@
+{% extends "ministry/base.html" %}
+{% load static %}
+{% block title %}Media{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="page-hero page-hero--short">
+  <div class="page-hero__copy">
+    <p class="eyebrow eyebrow--light">Media</p>
+    <h1>Watch &amp; listen</h1>
+    <p>Watch recent messages and teachings from David Sudher.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap article-grid">
+    {% for item in items %}
+    <article class="article-card reveal">
+      <a href="{{ item.get_absolute_url }}">
+        <div class="thumb">
+          <img src="{{ item.thumbnail_url }}" alt="">
+          <span class="play play--sm"></span>
+        </div>
+        <div class="article-card__body">
+          <h3>{{ item.title }}</h3>
+          <p class="meta">{{ item.preached_on|date:"M j, Y" }}</p>
+        </div>
+      </a>
+    </article>
+    {% empty %}
+    <p>Media will appear here.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+<article class="testimony-card reveal" data-category="{{ item.category }}">
+  {% if item.photo %}
+    <img src="{{ item.photo }}" alt="{{ item.name }}" width="600" height="400" loading="lazy">
+  {% else %}
+    <div class="testimony-card__initials-wrap" aria-hidden="true">
+      <div class="initials-circle">{{ item.initials }}</div>
+    </div>
+  {% endif %}
+  <div class="testimony-card__body">
+    <p class="pill">{{ item.category_display }}</p>
+    <h3>{{ item.title }}</h3>
+    <p class="testimony-card__excerpt">{{ item.excerpt }}</p>
+    <p class="meta">{{ item.name }}{% if item.location %} · {{ item.location }}{% endif %}</p>
+    <button type="button" class="btn-read-story js-open-testimony"
+      data-title="{{ item.title }}"
+      data-name="{{ item.name }}"
+      data-location="{{ item.location|default:'' }}"
+      data-category="{{ item.category_display }}"
+      data-story="{{ item.story }}">
+      Read story &rarr;
+    </button>
+  </div>
+</article>

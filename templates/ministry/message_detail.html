@@ -1,0 +1,33 @@
+{% extends "ministry/base.html" %}
+{% block title %}{{ item.title }}{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="wrap narrow reveal">
+    <p class="eyebrow">Message</p>
+    <p class="meta">{{ item.preached_on|date:"F j, Y" }}</p>
+    <h1 class="display">{{ item.title }}</h1>
+    <p class="lede">{{ item.description }}</p>
+    {% if item.embed_url %}
+      <div class="embed">
+        <iframe src="{{ item.embed_url }}" title="{{ item.title }}" allowfullscreen loading="lazy"></iframe>
+      </div>
+    {% else %}
+      <figure class="portrait">
+        <img src="{{ item.thumbnail_url }}" alt="{{ item.title }}">
+      </figure>
+      {% if item.youtube_video_id %}
+        <p style="margin-top: 1rem;"><a class="btn btn--gold" href="https://www.youtube.com/watch?v={{ item.youtube_video_id }}" target="_blank" rel="noopener">Watch on YouTube</a></p>
+      {% endif %}
+    {% endif %}
+    {% if others %}
+      <h2 style="margin-top:3rem">More messages</h2>
+      <ul class="plain-list">
+        {% for m in others %}
+          <li><a href="{{ m.get_absolute_url }}">{{ m.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

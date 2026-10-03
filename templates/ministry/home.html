@@ -1,0 +1,218 @@
+{% extends "ministry/base.html" %}
+{% load static %}
+
+{% block title %}David Sudher Ministries{% endblock %}
+{% block meta %}Raising a generation to know Christ and make Christ known.{% endblock %}
+{% block body_class %}page-home{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "David Sudher Ministries",
+  "url": "{{ request.scheme }}://{{ request.get_host }}/",
+  "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'ministry/images/portrait-thoughtful.jpg' %}",
+  "description": "Raising a generation to know Christ and make Christ known.",
+  "founder": {
+    "@type": "Person",
+    "name": "David Sudher"
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <img class="hero__img" src="{% static 'ministry/images/hero-preaching.jpg' %}" alt="David Sudher preaching and ministering" width="1600" height="900">
+  <div class="hero__veil"></div>
+  <div class="hero__copy reveal">
+    <p class="eyebrow eyebrow--light">David Sudher Ministries</p>
+    <h1>Raising a generation to know Christ and make Christ known.</h1>
+    <p class="hero__lede">Helping people discover their identity in Christ, grow in faith, and become bold witnesses in their families, churches, and nations.</p>
+    <div class="hero__actions">
+      <a class="btn btn--gold" href="{% url 'ministry:messages' %}">Watch Messages</a>
+      <a class="btn btn--ghost" href="{% url 'ministry:about' %}">Read David's Story</a>
+    </div>
+  </div>
+</section>
+
+<section class="vision section section--ink" id="vision">
+  <div class="wrap">
+    <header class="center reveal">
+      <p class="eyebrow eyebrow--gold">The Vision</p>
+      <h2>Raise. Equip. Send.</h2>
+    </header>
+    <div class="cards-3">
+      <article class="card-lift reveal">
+        <p class="card-lift__num">01</p>
+        <h3>Raise</h3>
+        <p>A generation that knows Christ and loves His Word.</p>
+      </article>
+      <article class="card-lift reveal">
+        <p class="card-lift__num">02</p>
+        <h3>Equip</h3>
+        <p>Believers to discover purpose, calling, and spiritual strength.</p>
+      </article>
+      <article class="card-lift reveal">
+        <p class="card-lift__num">03</p>
+        <h3>Send</h3>
+        <p>People into families, churches, workplaces, and nations as witnesses.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="what-we-do">
+  <div class="wrap">
+    <header class="center reveal">
+      <p class="eyebrow">What we do</p>
+      <h2>Grow. Then go.</h2>
+    </header>
+    <div class="split reveal" style="margin-top: 3rem; margin-bottom: 3.5rem;">
+      <figure class="portrait">
+        <img src="{% static 'ministry/images/prayer-youth-girl.jpg' %}" alt="Youth mentorship and discipleship" width="600" height="400" loading="lazy" style="height: 340px; width: 100%; object-fit: cover; border-radius: 8px;">
+      </figure>
+      <div>
+        <p class="eyebrow">01 · Mentorship &amp; Discipleship</p>
+        <h3>A voice for the next generation</h3>
+        <p>David carries a strong conviction to raise, encourage, and equip young people to live boldly for Christ. They are not simply the church of tomorrow — they are a generation God can use today.</p>
+      </div>
+    </div>
+    <div class="split reverse reveal" style="margin-bottom: 3rem;">
+      <figure class="portrait">
+        <img src="{% static 'ministry/images/prayer-congregation.jpg' %}" alt="Evangelism and outreach" width="600" height="400" loading="lazy" style="height: 340px; width: 100%; object-fit: cover; border-radius: 8px;">
+      </figure>
+      <div>
+        <p class="eyebrow">02 · Evangelism &amp; Mission</p>
+        <h3>Encounter the Gospel</h3>
+        <p>Helping people encounter Jesus as Lord. Discipleship walks with believers until identity, gifts, and calling become a way of life in families, workplaces, and communities.</p>
+      </div>
+    </div>
+    <p class="center"><a class="btn btn--outline" href="{% url 'ministry:about' %}">Read David's Story</a></p>
+  </div>
+</section>
+
+<section class="global section section--warm">
+  <div class="wrap split split--center">
+    <div class="reveal">
+      <p class="eyebrow">Nations</p>
+      <h2>A message without borders</h2>
+      <p>David has ministered across Bangalore, Hyderabad, India, Pakistan, and the United States, connecting with people from different backgrounds and cultures.</p>
+      <p class="nations">India · Pakistan · United States</p>
+      <p>Across every place, the mission remains the same: to make Christ known and to raise a generation that walks with Him.</p>
+    </div>
+    <figure class="portrait reveal">
+      <img src="{% static 'ministry/images/prayer-nations.jpg' %}" alt="David ministering to people across nations" width="600" height="420" loading="lazy" style="height: 360px; width: 100%; object-fit: cover; border-radius: 8px;">
+    </figure>
+  </div>
+</section>
+
+<section class="media-feature section">
+  <div class="wrap">
+    <header class="split-head reveal">
+      <div>
+        <p class="eyebrow">Messages</p>
+        <h2>Latest messages</h2>
+      </div>
+      <a class="btn btn--outline" href="{% url 'ministry:messages' %}">View all</a>
+    </header>
+    {% if messages %}
+    <div class="article-grid">
+      {% for message in messages %}
+      <article class="article-card reveal">
+        <a href="{% url 'ministry:message_detail' message.slug %}">
+          <img src="{{ message.thumbnail_url }}" alt="{{ message.title }}">
+          <div class="article-card__body">
+            <p class="meta">{{ message.preached_on|date:"M j, Y" }}</p>
+            <h3>{{ message.title }}</h3>
+            <p>{{ message.description }}</p>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="stories section section--ink">
+  <div class="wrap">
+    <header class="center reveal">
+      <p class="eyebrow eyebrow--gold">Testimonies</p>
+      <h2>Stories of what God has done</h2>
+      <p class="lede lede--light">God is still transforming lives. Every testimony is a reminder of His faithfulness.</p>
+    </header>
+    {% if featured_testimony %}
+    <blockquote class="quote-card reveal" style="margin-top:2rem; font-size:1.5rem; line-height:1.35; border-top:0;">
+      <p>“{{ featured_testimony.story }}”</p>
+      <footer>
+        <strong>{{ featured_testimony.name }}</strong>
+        {% if featured_testimony.location %}<span>{{ featured_testimony.location }}</span>{% endif %}
+      </footer>
+    </blockquote>
+    {% endif %}
+    <p class="center" style="margin-top:2.2rem">
+      <a class="btn btn--gold" href="{% url 'ministry:testimonies' %}">Read more stories</a>
+    </p>
+  </div>
+</section>
+
+<section class="events-tease section">
+  <div class="wrap">
+    <header class="split-head reveal">
+      <div>
+        <p class="eyebrow">Gatherings</p>
+        <h2>Upcoming events</h2>
+      </div>
+    </header>
+    <div class="event-list">
+      {% for event in events %}
+      <article class="event-row reveal">
+        <time datetime="{{ event.starts_at|date:'c' }}">
+          <span>{{ event.starts_at|date:"M" }}</span>
+          <strong>{{ event.starts_at|date:"d" }}</strong>
+        </time>
+        <div>
+          <p class="pill">{{ event.get_event_type_display }}</p>
+          <h3><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h3>
+          <p>{{ event.location }}</p>
+        </div>
+        <a class="btn btn--outline" href="{{ event.get_absolute_url }}">Learn more</a>
+      </article>
+      {% empty %}
+      <p>Upcoming gatherings will appear here.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="newsletter" id="stay-connected">
+  <div class="wrap newsletter__grid">
+    <div class="reveal">
+      <p class="eyebrow">Stay connected</p>
+      <h2>Receive encouragement in your inbox</h2>
+      <p class="lede">New messages, ministry updates, and upcoming gatherings — written to strengthen your walk with Christ.</p>
+    </div>
+    <form class="newsletter__form reveal" method="post" action="{% url 'ministry:newsletter' %}">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ request.path }}">
+      {{ newsletter_form.first_name }}
+      {{ newsletter_form.email }}
+      <button class="btn btn--gold" type="submit">Join the Community</button>
+    </form>
+  </div>
+</section>
+
+{% if scripture %}
+<section class="scripture-band">
+  <div class="wrap center reveal">
+    <p class="eyebrow">Scripture</p>
+    <blockquote>
+      <p>“{{ scripture.verse_text }}”</p>
+      <cite>{{ scripture.reference }}</cite>
+    </blockquote>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

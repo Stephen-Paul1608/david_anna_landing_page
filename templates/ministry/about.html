@@ -1,0 +1,76 @@
+{% extends "ministry/base.html" %}
+{% load static %}
+{% block title %}About David Sudher{% endblock %}
+{% block meta %}Learn about David Sudher's calling, prayer journey, mentoring, and ministry across India, Pakistan, and the United States.{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="page-hero page-hero--about">
+  <img src="{% static 'ministry/images/portrait-thoughtful.jpg' %}" alt="David Sudher in prayer and reflection">
+  <div class="page-hero__copy">
+    <p class="eyebrow eyebrow--light">About</p>
+    <h1>David Sudher</h1>
+    <p class="page-hero__sub">Leader. Mentor. Minister. Witness.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose reveal">
+    <p class="lede">David Sudher brings more than 17 years of experience in leadership, ministry, and people development, with a heart to help believers know Christ and live with purpose.</p>
+    <p>He has served in sales, operations, and global leadership spaces, but the deepest influence in his life has been the call to raise a generation that knows God, hears His voice, and moves with courage.</p>
+
+    <h2>A Life Rooted in Prayer</h2>
+    <p>David Sudher was born and raised in Bangalore, India, in a home deeply rooted in prayer and the presence of God.</p>
+    <p>From his earliest years, he was shaped by the life of his mother, a woman of prayer who spent <strong>seven hours a day in prayer</strong>. Her devotion became one of the earliest influences that shaped his relationship with God.</p>
+    <p>Her prayers and sacrifice laid a foundation for David to grow in spiritual sensitivity and a deep hunger for God's presence.</p>
+
+    <figure class="about-figure">
+      <img src="{% static 'ministry/images/prayer-community.jpg' %}" alt="Prayer gathering with believers seeking God's presence" width="1200" height="800" loading="lazy">
+      <figcaption class="about-caption"><em>Prayer. Intercession. Surrender.</em></figcaption>
+    </figure>
+
+    <h2>A Growing Hunger for God</h2>
+    <p>As David grew in his relationship with God, his hunger and thirst for Him continued to increase.</p>
+    <p>In 2010, he developed an unquenchable desire to experience the fullness of the Holy Spirit. After seeking wise counsel and devoting himself to prayer and Scripture, he experienced a powerful encounter with God.</p>
+    <p><strong>God answered the hunger of his heart in a way that marked the rest of his life.</strong></p>
+    <blockquote class="pull">"When there is an unquenchable thirst for God, He will fill you."</blockquote>
+
+    <h2>Raising the Next Generation</h2>
+    <p>One of the defining expressions of David's ministry has been his investment in the younger generation.</p>
+    <p>For approximately <strong>10 years</strong>, David served and led teams of young people, investing his time, teaching, prayer, and leadership into their lives.</p>
+    <p>His heart was never merely to build a team. It was to raise people who would know God, hear His voice, and walk confidently in His purposes.</p>
+    <blockquote class="pull">"When God raises people, He raises them to become a blessing to others."</blockquote>
+
+    <h2>Equipping People to Hear God</h2>
+    <p>A central burden in David's ministry is to help people develop a deeper relationship with God.</p>
+    <p>He longs to see believers move beyond knowing about God and begin to pray, study Scripture, recognize God's voice, discern His leading, and understand their spiritual calling.</p>
+    <p>His ministry emphasizes <strong>hunger for God, prayer, the Word, the Holy Spirit, and spiritual leadership</strong>.</p>
+
+    <h2>A Ministry That Crosses Borders</h2>
+    <p>What began in Bangalore has continued beyond geographical boundaries.</p>
+    <p>David has ministered in cities and villages across India and Pakistan, and he has also ministered in the United States, carrying a message of faith, prayer, and the power of the Holy Spirit.</p>
+    <p>Across every place, the heart of the message remains the same: to help people encounter Jesus and step into their calling.</p>
+
+    <figure class="about-figure">
+      <img src="{% static 'ministry/images/prayer-youth-leader.jpg' %}" alt="David discipling and teaching young leaders" width="1200" height="800" loading="lazy">
+      <figcaption class="about-caption"><em>Leader. Discipleship. Calling.</em></figcaption>
+    </figure>
+
+    <h2>The Journey Continues</h2>
+    <p>David's story is still being written.</p>
+    <p>From the prayers of a home in Bangalore to a growing ministry reaching lives across nations, his journey is a testimony of what God can do when a person yields to Him with an undivided heart.</p>
+
+    <blockquote class="closing-prayer">
+      “To remain hungry for God, faithful to His calling, and available for His purposes.”
+    </blockquote>
+
+    <figure class="about-figure">
+      <img src="{% static 'ministry/images/speaking-jesus-calls.jpg' %}" alt="David Sudher preaching the Gospel" width="1200" height="800" loading="lazy">
+      <figcaption class="about-caption"><em>Leader. Mentor. Minister. Witness.</em></figcaption>
+    </figure>
+
+    <p class="center" style="margin-top: 2.5rem;">
+      <a class="btn btn--outline" href="{% url 'ministry:contact' %}">Connect with David</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

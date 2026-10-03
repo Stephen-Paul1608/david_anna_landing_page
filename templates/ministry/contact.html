@@ -1,0 +1,27 @@
+{% extends "ministry/base.html" %}
+{% block title %}Contact David Sudher Ministries{% endblock %}
+{% block meta %}Get in touch with David Sudher Ministries for prayer, partnership, speaking invitations, or ministry enquiries.{% endblock %}
+{% block body_class %}page-inner{% endblock %}
+{% block content %}
+<section class="page-hero page-hero--short">
+  <div class="page-hero__copy">
+    <p class="eyebrow eyebrow--light">Contact</p>
+    <h1>Contact David Sudher Ministries</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap contact-layout">
+    <aside class="contact-paths reveal">
+      <a href="?topic=general">General enquiries</a>
+      <a href="?topic=speaking">Speaking invitations</a>
+      <a href="?topic=partnership">Ministry partnerships</a>
+      <a href="?topic=prayer">Testimony / prayer requests</a>
+    </aside>
+    <form class="form reveal" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="btn btn--gold" type="submit">Send message</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

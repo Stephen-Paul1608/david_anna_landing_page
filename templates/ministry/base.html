@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}David Sudher Ministries{% endblock %}</title>
+  <meta name="description" content="{% block meta %}Raising a generation to know Christ and make Christ known.{% endblock %}">
+  <link rel="canonical" href="{% block canonical %}{{ request.build_absolute_uri }}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}David Sudher Ministries{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}Raising a generation to know Christ and make Christ known.{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'ministry/images/hero-preaching.jpg' %}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}David Sudher Ministries{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}Raising a generation to know Christ and make Christ known.{% endblock %}">
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'ministry/images/hero-preaching.jpg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'ministry/css/main.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav" id="site-nav">
+    <div class="nav__inner">
+      <a class="brand" href="{% url 'ministry:home' %}" aria-label="David Sudher Ministries home">
+        {% if site_settings.logo %}
+          <img class="brand__logo" src="{{ site_settings.logo.url }}" alt="David Sudher Ministries">
+        {% else %}
+          <span class="brand__mark">
+            <span class="brand__name">David Sudher</span>
+            <span class="brand__sub">Ministries</span>
+          </span>
+        {% endif %}
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" id="nav-panel">
+        <a href="{% url 'ministry:home' %}">Home</a>
+        <a href="{% url 'ministry:about' %}">About</a>
+        <a href="{% url 'ministry:messages' %}">Messages</a>
+        <a href="{% url 'ministry:testimonies' %}">Testimonies</a>
+        <a href="{% url 'ministry:events' %}">Events</a>
+        <a class="btn btn--nav" href="{% url 'ministry:contact' %}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  {% if messages %}
+    <div class="flash" role="status">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid reveal">
+      <div>
+        <p class="footer__name">David Sudher Ministries</p>
+        <p class="footer__tag">{{ site_settings.tagline }}</p>
+      </div>
+      <div>
+        <p class="footer__h">Explore</p>
+        <a href="{% url 'ministry:home' %}">Home</a>
+        <a href="{% url 'ministry:about' %}">About</a>
+        <a href="{% url 'ministry:messages' %}">Messages</a>
+        <a href="{% url 'ministry:testimonies' %}">Testimonies</a>
+      </div>
+      <div>
+        <p class="footer__h">Connect</p>
+        <a href="{% url 'ministry:todays_word' %}">Today's Word</a>
+        <a href="{% url 'ministry:events' %}">Events</a>
+        <a href="{% url 'ministry:media' %}">Media</a>
+        <a href="{% url 'ministry:contact' %}">Contact</a>
+      </div>
+      <div>
+        <p class="footer__h">Stay Connected</p>
+        <p style="font-size: 0.88rem; color: rgba(255,252,248,.65); margin-bottom: 0.8rem;">Receive encouragement and ministry updates in your inbox.</p>
+        <form method="post" action="{% url 'ministry:newsletter' %}">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <input type="email" name="email" placeholder="Your email address" required style="width: 100%; min-height: 40px; padding: 0.5rem 0.8rem; font-size: 0.9rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #fff; margin-bottom: 0.5rem;">
+          <button class="btn btn--gold" type="submit" style="width: 100%; min-height: 38px; font-size: 0.72rem;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="wrap footer__base">
+      <p>© 2026 David Sudher Ministries. All Rights Reserved.</p>
+      <p>
+        <a href="{% url 'ministry:privacy' %}">Privacy Policy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="{% url 'ministry:terms' %}">Terms &amp; Conditions</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="{% static 'ministry/js/main.js' %}"></script>
+</body>
+</html>
