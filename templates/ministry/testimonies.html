@@ -13,71 +13,16 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="filters js-testimony-filters">
-      <button type="button" class="filter-pill is-on" data-filter="all">All</button>
-      <button type="button" class="filter-pill" data-filter="salvation">Salvation</button>
-      <button type="button" class="filter-pill" data-filter="healing">Healing</button>
-      <button type="button" class="filter-pill" data-filter="provision">Provision</button>
-      <button type="button" class="filter-pill" data-filter="family">Family</button>
-      <button type="button" class="filter-pill" data-filter="calling">Calling</button>
-      <button type="button" class="filter-pill" data-filter="deliverance">Deliverance</button>
-    </div>
 
-    {% if featured %}
-    <article class="testimony-feature reveal" data-category="{{ featured.category }}">
-      {% if featured.photo %}
-        <img src="{{ featured.photo }}" alt="{{ featured.name }}" width="1200" height="800">
-      {% else %}
-        <div class="testimony-card__initials-wrap" aria-hidden="true" style="min-height: 380px;">
-          <div class="initials-circle" style="width: 100px; height: 100px; font-size: 3rem;">{{ featured.initials }}</div>
-        </div>
-      {% endif %}
-      <div class="testimony-feature__copy">
-        <p class="pill">{{ featured.category_display }}</p>
-        <h2>{{ featured.title }}</h2>
-        <p class="testimony-feature__quote">“{{ featured.excerpt }}”</p>
-        <p class="meta">{{ featured.name }}{% if featured.location %} · {{ featured.location }}{% endif %}</p>
-        <button type="button" class="btn btn--outline js-open-testimony" style="align-self: flex-start; margin-top: 1rem;"
-          data-title="{{ featured.title }}"
-          data-name="{{ featured.name }}"
-          data-location="{{ featured.location|default:'' }}"
-          data-category="{{ featured.category_display }}"
-          data-story="{{ featured.story }}">
-          Read story
-        </button>
-      </div>
-    </article>
-    {% endif %}
-
-    <div class="testimony-grid">
-      {% for item in testimonies %}
-        {% include "ministry/_testimony_card.html" with item=item %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
 <section class="section section--cream" id="share">
   <div class="wrap center narrow reveal">
-    <p class="eyebrow">Your Story</p>
-    <h2>Share what God has done</h2>
-    <p class="lede" style="margin-inline: auto;">Has the Lord touched your life through prayer, a message, or personal encounter? We would love to hear your testimony.</p>
-    <div style="margin-top: 2rem;">
-      <a class="btn btn--gold" href="{% url 'ministry:contact' %}?topic=prayer">Share Your Story</a>
-    </div>
+    <p class="eyebrow">Work in progress</p>
+    <h2>Stay tuned while we build this feature</h2>
+    <p class="lede" style="margin-inline: auto;">We are bringing you amazing stories of God's work in the lives of His people.</p>
+    
   </div>
 </section>
 
-<!-- Read Story In-Page Modal Dialog -->
-<dialog id="testimony-dialog" class="testimony-modal" aria-labelledby="modal-title">
-  <div class="testimony-modal__inner">
-    <button type="button" class="testimony-modal__close" id="modal-close" aria-label="Close story">&times;</button>
-    <p class="pill" id="modal-category"></p>
-    <h2 id="modal-title" style="margin-top: 0.3em; margin-bottom: 0.4em;"></h2>
-    <p class="meta" id="modal-meta"></p>
-    <div class="prose" id="modal-story" style="margin-top: 1.5rem; line-height: 1.8;"></div>
-  </div>
-</dialog>
+
 {% endblock %}
